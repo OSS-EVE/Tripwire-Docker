@@ -1,0 +1,26 @@
+app:
+  restart: always
+  build: app/
+  links: 
+   - db
+db:
+  restart: always
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: weaknesspays
+cron:
+  restart: always
+  build: cron/
+  volumes_from:
+   - app
+  links:
+   - db
+nginx:
+  volumes_from:
+   - app
+  links:
+   - app
+  restart: always
+  build: nginx/
+  ports:
+   - "8081:80"

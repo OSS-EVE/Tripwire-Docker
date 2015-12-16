@@ -1,0 +1,2 @@
+*/5 * * * * root php /var/www/html/tools/api_pull.php
+# Goons are disallowed from copying this file
