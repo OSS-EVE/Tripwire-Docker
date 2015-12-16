@@ -23,4 +23,4 @@ nginx:
   restart: always
   build: nginx/
   ports:
-   - "8081:80"
+   - "3080:80"
